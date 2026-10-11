@@ -1,0 +1,168 @@
+{
+  "features": [
+    "Age",
+    "Gender",
+    "Ethnicity",
+    "EducationLevel",
+    "BMI",
+    "Smoking",
+    "PhysicalActivity",
+    "DietQuality",
+    "SleepQuality",
+    "PollutionExposure",
+    "PollenExposure",
+    "DustExposure",
+    "PetAllergy",
+    "FamilyHistoryAsthma",
+    "HistoryOfAllergies",
+    "Eczema",
+    "HayFever",
+    "GastroesophagealReflux",
+    "LungFunctionFEV1",
+    "LungFunctionFVC",
+    "Wheezing",
+    "ShortnessOfBreath",
+    "ChestTightness",
+    "Coughing",
+    "NighttimeSymptoms",
+    "ExerciseInduced"
+  ],
+  "numeric_features": [
+    "Age",
+    "BMI",
+    "Smoking",
+    "PhysicalActivity",
+    "DietQuality",
+    "SleepQuality",
+    "PollutionExposure",
+    "PollenExposure",
+    "DustExposure",
+    "PetAllergy",
+    "FamilyHistoryAsthma",
+    "HistoryOfAllergies",
+    "Eczema",
+    "HayFever",
+    "GastroesophagealReflux",
+    "LungFunctionFEV1",
+    "LungFunctionFVC",
+    "Wheezing",
+    "ShortnessOfBreath",
+    "ChestTightness",
+    "Coughing",
+    "NighttimeSymptoms",
+    "ExerciseInduced"
+  ],
+  "categorical_features": [
+    "Gender",
+    "Ethnicity",
+    "EducationLevel"
+  ],
+  "target_column": "Diagnosis",
+  "target_definition": "0 = source record labeled no asthma; 1 = source record labeled asthma.",
+  "probability_threshold": 0.5,
+  "risk_bands": {
+    "low_max_exclusive": 0.35,
+    "moderate_max_exclusive": 0.65
+  },
+  "rows_used": 2392,
+  "positive_count": 124,
+  "positive_prevalence": 0.051839464882943144,
+  "test_size": 0.2,
+  "best_model_by_roc_auc": "Logistic Regression",
+  "evaluation": {
+    "Logistic Regression": {
+      "accuracy": 0.5949895615866388,
+      "precision": 0.07106598984771574,
+      "recall": 0.56,
+      "f1": 0.12612612612612611,
+      "specificity": 0.5969162995594713,
+      "roc_auc": 0.6158590308370043,
+      "average_precision": 0.0783915332899165,
+      "confusion_matrix": [
+        [
+          271,
+          183
+        ],
+        [
+          11,
+          14
+        ]
+      ],
+      "tn": 271,
+      "fp": 183,
+      "fn": 11,
+      "tp": 14
+    },
+    "K-Nearest Neighbors": {
+      "accuracy": 0.9457202505219207,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "specificity": 0.9977973568281938,
+      "roc_auc": 0.5178854625550661,
+      "average_precision": 0.0519559089574788,
+      "confusion_matrix": [
+        [
+          453,
+          1
+        ],
+        [
+          25,
+          0
+        ]
+      ],
+      "tn": 453,
+      "fp": 1,
+      "fn": 25,
+      "tp": 0
+    },
+    "Decision Tree": {
+      "accuracy": 0.7473903966597077,
+      "precision": 0.04716981132075472,
+      "recall": 0.2,
+      "f1": 0.07633587786259542,
+      "specificity": 0.7775330396475771,
+      "roc_auc": 0.48088105726872243,
+      "average_precision": 0.05347766557369098,
+      "confusion_matrix": [
+        [
+          353,
+          101
+        ],
+        [
+          20,
+          5
+        ]
+      ],
+      "tn": 353,
+      "fp": 101,
+      "fn": 20,
+      "tp": 5
+    },
+    "Support Vector Machine": {
+      "accuracy": 0.9478079331941545,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "specificity": 1.0,
+      "roc_auc": 0.5294273127753304,
+      "average_precision": 0.0833493516496159,
+      "confusion_matrix": [
+        [
+          454,
+          0
+        ],
+        [
+          25,
+          0
+        ]
+      ],
+      "tn": 454,
+      "fp": 0,
+      "fn": 25,
+      "tp": 0
+    }
+  },
+  "source": "https://doi.org/10.34740/KAGGLE/DSV/8669080",
+  "limitations": "The Kaggle publisher identifies this dataset as synthetic. It has a small positive class (about 5%). Class weighting permits positive predictions but does not create reliable signal. Holdout performance is weak; score bands are illustrative, uncalibrated model scores, not medical risk probabilities."
+}
